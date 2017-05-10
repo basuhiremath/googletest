@@ -1,0 +1,5 @@
+# scons file for test 
+
+Import('env')
+
+env.Program('test_factorial', [Glob('../*.cpp'), Glob('../../src/*.c')])
