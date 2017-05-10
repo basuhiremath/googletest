@@ -1,0 +1,9 @@
+# scons file for gtest library
+
+env = Environment()
+env.Replace(CC = 'g++')
+env.VariantDir('$(BUILDPATH)', '..', duplicate = 0)
+env.Append(LINKFLAGS = '--static')
+env.Append(CPPPATH = ['../include', '../'])
+
+env.Library('gtest_lib', ['../src/gtest-all.cc', '../src/gtest_main.cc'])
